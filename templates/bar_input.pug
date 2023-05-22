@@ -1,0 +1,16 @@
+block bar_input
+    if d.progress == "done"
+        .item
+            img#p_100.p_100(src='resources/images/progressbar_100.jpg' alt='')
+    else if d.progress == "almost done"
+        .item
+            img#p_75.p_100(src='resources/images/progressbar_75.jpg' alt='')
+    else if d.progress == "working"
+        .item
+            img#p_50.p_100(src='resources/images/progressbar_50.jpg' alt='')
+    else if d.progress == "just started"
+        .item
+            img#p_25.p_100(src='resources/images/progressbar_25.jpg' alt='')
+    else
+        .item
+            img#p_0.p_100(src='resources/images/progressbar_0.jpg' alt='')

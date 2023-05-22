@@ -1,0 +1,23 @@
+block status_input
+    .item
+        select.status_selection(id='P_' + d.task_number, name='status_list', onchange='update_api('+ d.task_number + ', "progress")')
+            if d.progress == "not done"
+                option(id='not_done', value='not done', selected) Not done
+            else 
+                option(id='not_done', value='not done') Not done
+            if d.progress == "just started"
+                option(id='just_started', value='just started', selected) Just started
+            else 
+                option(id='just_started', value='just started') Just started
+            if d.progress == "working"
+                option(id='working', value='working', selected) Working
+            else 
+                option(id='working', value='working') Working
+            if d.progress == "almost done"
+                option(id='almost_done', value='almost done', selected) Almost done
+            else 
+                option(id='almost_done', value='almost done') Almost done
+            if d.progress == "done"
+                option(id='done', value='done', selected) Done
+            else 
+                option(id='done', value='done') Done

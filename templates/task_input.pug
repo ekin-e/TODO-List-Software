@@ -1,0 +1,4 @@
+block status_input
+    .task
+        textarea.task_box(id='T_' + d.task_number, name='message' rows='4' cols='50' required='' onchange='update_api('+ d.task_number + ', "task")') #{d.task}
+        br

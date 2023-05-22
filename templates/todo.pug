@@ -1,0 +1,41 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title ToDo
+  link(href='resources/css/todo_style.css' rel='stylesheet')
+  script(async='' defer='' src='resources/js/button.js')
+body(class="todo_body", onload='init()')
+.page
+  h1 TODO LIST
+  .task_screen
+    .operations
+      .add_task
+        label(for='add_button')
+        button.add_button(type='button' name='add_button' onclick='call_add()') +
+      .filter
+        form.filter_form(action='todo.html' method='get')
+          fieldset
+            legend Filter Tasks
+            input.radio-toolbar(type='radio' name='filtering' value='all')
+            label(for='all') all
+            input(type='radio' name='filtering' value='done')
+            label(for='done') done
+            input(type='radio' name='filtering' value='almost done')
+            label(for='almost_done') almost done
+            input(type='radio' name='filtering' value='working')
+            label(for='working') working
+            input(type='radio' name='filtering' value='just started')
+            label(for='just_started') just started
+            input(type='radio' name='filtering' value='not done')
+            label(for='not_done') not done
+            input.custom_submit(type='submit' name='filter' value='GO')
+    each d in data
+      .task_status
+        .tasks
+            include task_input.pug
+        .status
+            include status_input.pug
+        .bar
+            include bar_input.pug
+        .delete
+            include delete.pug
